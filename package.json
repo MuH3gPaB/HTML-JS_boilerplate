@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Boilerplate for developing simple apps with babel and hot reload",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "file-loader": "^6.0.0"
+  },
   "devDependencies": {
     "@babel/cli": "^7.5.5",
     "@babel/core": "^7.5.5",
