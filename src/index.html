@@ -1,10 +1,80 @@
 <!DOCTYPE html>
+<html>
   <head>
-    <title>HTML + JS boilerplate project</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Todo list</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
   </head>
   <body>
-    <div>Hello, world</div>
+    <div class="body__todo-list todo-list">
+      <form class="todo-list__header form-inline">
+        <label class="todo-list__label">Todo List</label>
+        <input
+          class="input-lg form-control todo-list__search-input underlined--white"
+          type="text"
+          placeholder="Search..."
+          id="search-input"
+        />
+      </form>
+      <div class="todo-list__content">
+        <form class="todo-list__add form-inline">
+          <input
+            class="todo-list__new-task-input form-control input-lg underlined--gray"
+            type="text"
+            placeholder="New task..."
+            id="taskText"
+            formaction="#"
+          />
+          <input
+            class="btn btn-default btn-lg todo-list__add-button"
+            type="submit"
+            value="ADD"
+          />
+        </form>
+        <div class="todo-list__list todo-list__open-list">
+          <div class="list__head">
+            <p class="list__label">Open</p>
+            <select
+              class="form-control input-lg list__sort-select underlined--gray"
+            >
+            </select>
+          </div>
+          <div class="list__body"></div>
+          <div class="list__footer">
+            <a href="#" class="todo-list__clear">Clear "Open" list</a>
+          </div>
+        </div>
+        <div class="todo-list__list todo-list__done-list">
+          <div class="list__head">
+            <p class="list__label">Done</p>
+            <select
+              class="form-control input-lg list__sort-select underlined--gray">
+            </select>
+          </div>
+          <div class="list__body"></div>
+          <div class="list__footer">
+            <a href="#" class="todo-list__clear">Clear "Done" list</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <template id="list__task--template">
+      <div class="list__task">
+        <div class="list__task--container">
+          <input type="checkbox" class="form-control task__checkbox checkbox" />
+          <p class="task__text"></p>
+          <textarea class="task__text task__text--input from-control underlined--gray"></textarea>
+          <div class="task__time">
+            <p class="task__time--created"></p>
+            <p class="task__time--completed"></p>
+          </div>
+        </div>
+        <div class="task__delete"> </div>
+        </div>
+      </div>
+    </template>
   </body>
 </html>

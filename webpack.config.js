@@ -4,7 +4,9 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 config = {
-  entry: { main: './src/index.js' },
+  entry: {
+    main: './src/js/index.js',
+  },
 
   output: {
     path: path.resolve(__dirname, './dist'),
@@ -28,6 +30,26 @@ config = {
             },
           },
           'css-loader',
+        ],
+      },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: 'url-loader',
+          },
+        ],
+      },
+      {
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'fonts/',
+            },
+          },
         ],
       },
     ],
